@@ -21,7 +21,13 @@ var AcervoComponent = (function () {
     AcervoComponent.prototype.getLivros = function () {
         var _this = this;
         this.livroService.getLivros()
-            .subscribe(function (livros) { return _this.acervo = livros; }, function (error) { return _this.erroMessage = error; });
+            .then(function (livros) { return _this.acervo = livros; })
+            .catch(function (error) { return _this.erroMessage = error; });
+        /*this.livroService.getLivros()
+          .subscribe(
+            livros => this.acervo = <Livro[]> livros,
+            error => this.erroMessage = <any> error
+        );*/
     };
     AcervoComponent.prototype.totalDeLivros = function () {
         var total = 0;

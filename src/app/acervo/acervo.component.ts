@@ -22,10 +22,13 @@ export class AcervoComponent {
 
   private getLivros(): void {
     this.livroService.getLivros()
+      .then(livros => this.acervo = <Livro[]>livros)
+      .catch(error => this.erroMessage = <any>error);
+    /*this.livroService.getLivros()
       .subscribe(
         livros => this.acervo = <Livro[]> livros,
         error => this.erroMessage = <any> error
-    );
+    );*/
   }
 
   totalDeLivros() {

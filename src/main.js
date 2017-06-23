@@ -19,6 +19,7 @@ var app_component_1 = require('./app/app.component');
 var livro_data_service_1 = require('./app/livro-data.service');
 var livro_service_1 = require('./app/livro.service');
 var sobre_page_component_1 = require('./app/sobre/sobre-page.component');
+var livro_component_1 = require("./app/livro/livro.component");
 var appRoutes = [
     { path: '', redirectTo: 'livros', pathMatch: 'full' },
     { path: 'livros', component: acervo_component_1.AcervoComponent },
@@ -30,7 +31,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             bootstrap: [app_component_1.AppComponent],
-            declarations: [app_component_1.AppComponent, acervo_component_1.AcervoComponent, sobre_page_component_1.SobrePageComponent],
+            declarations: [app_component_1.AppComponent, acervo_component_1.AcervoComponent, sobre_page_component_1.SobrePageComponent, livro_component_1.LivroComponent],
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, router_1.RouterModule.forRoot(appRoutes)],
             providers: [livro_data_service_1.LivroDataService, livro_service_1.LivroService]
         }), 

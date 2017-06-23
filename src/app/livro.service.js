@@ -13,15 +13,22 @@ var http_1 = require('@angular/http');
 var Observable_1 = require("rxjs/Observable");
 require('rxjs/add/operator/catch');
 require('rxjs/add/operator/map');
+require('rxjs/add/operator/toPromise');
 var LivroService = (function () {
     function LivroService(http) {
         this.http = http;
         //json-server --watch livros.json -p 3002
         this.apiLivros = 'http://localhost:3002/livros/';
     }
-    LivroService.prototype.getLivros = function () {
+    /*getLivros(): Observable<Livro[]> {
         return this.http.get(this.apiLivros)
             .map(this.extrairDados)
+            .catch(this.handlerError);
+    }*/
+    LivroService.prototype.getLivros = function () {
+        return this.http.get(this.apiLivros)
+            .toPromise()
+            .then(function (response) { return response.json(); })
             .catch(this.handlerError);
     };
     LivroService.prototype.extrairDados = function (res) {

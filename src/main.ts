@@ -10,6 +10,7 @@ import { AppComponent } from './app/app.component';
 import { LivroDataService } from './app/livro-data.service';
 import { LivroService } from './app/livro.service';
 import { SobrePageComponent } from './app/sobre/sobre-page.component';
+import { LivroComponent } from "./app/livro/livro.component";
 
 const appRoutes: Routes = [
     {path: '', redirectTo: 'livros', pathMatch: 'full'},
@@ -19,7 +20,7 @@ const appRoutes: Routes = [
 
 @NgModule({
     bootstrap: [ AppComponent ],
-    declarations: [ AppComponent, AcervoComponent, SobrePageComponent ],
+    declarations: [ AppComponent, AcervoComponent, SobrePageComponent, LivroComponent ],
     imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes)],
     providers: [ LivroDataService, LivroService ]
 })

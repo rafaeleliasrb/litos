@@ -6,6 +6,7 @@ import { Livro } from './livro';
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class LivroService {
@@ -14,9 +15,16 @@ export class LivroService {
 
     constructor(private http: Http) {}
 
-    getLivros(): Observable<Livro[]> {
+    /*getLivros(): Observable<Livro[]> {
         return this.http.get(this.apiLivros)
             .map(this.extrairDados)
+            .catch(this.handlerError);
+    }*/
+
+    getLivros(): Promise<Livro[]> {
+        return this.http.get(this.apiLivros)
+            .toPromise()
+            .then(response => <Livro[]>response.json())
             .catch(this.handlerError);
     }
 
