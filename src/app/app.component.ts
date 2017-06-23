@@ -5,11 +5,15 @@ import { Component } from '@angular/core';
     template: `
       <nav>
         <div class="nav-wrapper">
-          <a class="brand-logo">{{titulo}}</a>          
+          <a class="brand-logo">{{titulo}}</a>
+          <ul class="right">
+            <li><a routerLink="/">Principal</a></li>
+            <li><a routerLink="/sobre-page">Sobre</a></li>
+          </ul>         
         </div>
       </nav>
       <div class="container">
-        <acervo></acervo>
+        <router-outlet></router-outlet>
       </div>`,
 })
 export class AppComponent {
