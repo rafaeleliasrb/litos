@@ -1,7 +1,7 @@
-import { LivroService } from './../livro.service';
+import { LivroService } from '../livro/livro.service';
 import { Component } from '@angular/core';
-import { Livro } from '../livro';
-import { ACERVO } from '../livros.mocks';
+import { Livro } from '../livro/livro';
+import { ACERVO } from '../livro/livros.mocks';
 
 @Component({
     moduleId: module.id,

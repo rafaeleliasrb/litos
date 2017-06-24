@@ -9,9 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var livro_1 = require('./livro');
 var LivroComponent = (function () {
     function LivroComponent() {
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', livro_1.Livro)
+    ], LivroComponent.prototype, "livro", void 0);
     LivroComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

@@ -7,8 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AcervoComponent } from './app/acervo/acervo.component';
 import { AppComponent } from './app/app.component';
-import { LivroDataService } from './app/livro-data.service';
-import { LivroService } from './app/livro.service';
+import { LivroDataService } from './app/livro/livro-data.service';
+import { LivroService } from './app/livro/livro.service';
 import { SobrePageComponent } from './app/sobre/sobre-page.component';
 import { LivroComponent } from "./app/livro/livro.component";
 

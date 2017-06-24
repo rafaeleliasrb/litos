@@ -9,7 +9,12 @@
                 (click)="adicionarUmNoCarrinho(livro)">
                 <i class="material-icons">add</i>
             </a>
-            <p><span class="new badge red" data-badge-caption="">{{livro.preco | currency : 'BRL': true}}</span>{{livro.descricao}}.</p>
+            <p>
+                <span class="new badge red" data-badge-caption="">
+                    {{livro.preco | currency : 'BRL': true}}
+                </span>
+                {{livro.descricao}}.
+            </p>
             <p *ngIf="livro.emEstoque > 0">{{livro.emEstoque}} restantes</p>
             <p *ngIf="livro.emEstoque === 0">ESGOTADO</p>
             <div class="input-field inline">

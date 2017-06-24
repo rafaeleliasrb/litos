@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { Livro } from './livro';
 
 @Component({
     moduleId: module.id,
@@ -6,5 +7,5 @@ import { Component } from "@angular/core";
     selector: 'livro'
 })
 export class LivroComponent {
-
+    @Input() livro: Livro;
 }
